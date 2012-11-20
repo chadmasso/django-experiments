@@ -65,9 +65,9 @@ def reset_pattern(key):
     #similar to above, but can pass pattern as arg instead
     try:
         cache_key = COUNTER_CACHE_KEY % key
-        db.counts.remove({'_id': {'$regex': cache_key})
+        db.counts.remove({'_id': {'$regex': cache_key}})
         freq_cache_key = COUNTER_FREQ_CACHE_KEY % key
-        db.counts.remove({'_id': {'$regex': freq_cache_key})
+        db.counts.remove({'_id': {'$regex': freq_cache_key}})
         return True
     except Exception:
         # Handle Redis failures gracefully
